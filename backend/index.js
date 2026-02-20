@@ -21,7 +21,7 @@ connectCloudinary();
 app.use(express.json());
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: "https://food-website-frontend-c6uj.onrender.com",
     credentials: true,
   })
 );
