@@ -34,7 +34,9 @@ const AddMenu = () => {
     try {
       setLoading(true);
       const { data } = await axios.post("/api/menu/add", formData, {
-        headers: { "Content-Type": "multipart/form-data" },
+        headers: { 
+              Authorization: `Bearer ${localStorage.getItem("adminToken")}`,
+          "Content-Type": "multipart/form-data" },
       });
       if (data.success) {
         toast.success(data.message);

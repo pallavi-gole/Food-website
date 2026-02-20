@@ -41,23 +41,32 @@ const AppContextProvider = ({ children }) => {
     0 || 0
   );
   // 🔹 Add to Cart function
-  const addToCart = async (menuId) => {
-    try {
-      const { data } = await axios.post("/api/cart/add", {
-        menuId,
-        quantity: 1,
-      });
-      if (data.success) {
-        toast.success(data.message);
-        fetchCartData();
-      } else {
-        toast.error(data.message);
-      }
-    } catch (error) {
-      console.error("Add to cart error:", error);
-      toast.error("Something went wrong!");
+  
+// 🔹 Add to Cart function
+const addToCart = async (menuId) => {
+  try {
+    const { data } = await axios.post(
+      "/api/cart/add",
+      { menuId, quantity: 1 },
+      { withCredentials: true }
+    );
+
+    if (data.success) {
+      toast.success(data.message);
+      fetchCartData();
+    } else {
+      toast.error(data.message);
     }
-  };
+  } catch (error) {
+    console.log(error);
+    toast.error("Please login first!");
+  }
+};
+
+
+
+
+
 
   const fetchCategories = async () => {
     try {
@@ -97,14 +106,14 @@ const AppContextProvider = ({ children }) => {
     }
   };
 
-  // useEffect(() => {
-  //   isAuth();
-  //   fetchCategories();
-  //   fetchMenus();
+   useEffect(() => {
+    isAuth();
+    fetchCategories();
+   fetchMenus();
 
 
-  //   fetchCartData();
-  // }, []);
+  
+   }, []);
 
 useEffect(() => {
   if (user && user.role === "user") {

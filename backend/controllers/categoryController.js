@@ -1,7 +1,10 @@
 import Category from "../models/categoryModel.js";
 import { v2 as cloudinary } from "cloudinary";
+import fs from "fs"; 
+
 
 export const addCategory = async (req, res) => {
+    
   try {
     const { name } = req.body;
     if (!name || !req.file) {

@@ -27,7 +27,9 @@ const AddCategory = () => {
     try {
       setLoading(true);
       const { data } = await axios.post("/api/category/add", formData, {
-        headers: { "Content-Type": "multipart/form-data" },
+        headers: { "Content-Type": "multipart/form-data" ,
+          Authorization: `Bearer ${localStorage.getItem("adminToken")}`,
+        },
       });
       if (data.success) {
         toast.success(data.message);
@@ -41,6 +43,17 @@ const AddCategory = () => {
       setLoading(false);
     }
   };
+
+
+
+
+
+
+
+
+
+
+
   return (
     <div className="py-12">
       <form

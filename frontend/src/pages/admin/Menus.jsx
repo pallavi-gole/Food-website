@@ -7,7 +7,13 @@ const Menus = () => {
 
   const deleteMenu = async (id) => {
     try {
-      const { data } = await axios.delete(`/api/menu/delete/${id}`);
+      const { data } = await axios.delete(`/api/menu/delete/${id}`,
+        {
+          headers: {
+          Authorization: `Bearer ${localStorage.getItem("adminToken")}`,
+        },
+        }
+      );
       if (data.success) {
         toast.success(data.message);
         fetchMenus();

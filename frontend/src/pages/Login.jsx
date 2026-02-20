@@ -22,9 +22,11 @@ const Login = () => {
     e.preventDefault();
     try {
       setLoading(true);
-      const { data } = await axios.post("/api/auth/login", formData);
+      const { data } = await axios.post("/api/auth/login", formData,
+        {withCredentials:true}
+      );
       if (data.success) {
-        setUser(true);
+        setUser(data.user);
         toast.success(data.message);
         navigate("/");
       } else {

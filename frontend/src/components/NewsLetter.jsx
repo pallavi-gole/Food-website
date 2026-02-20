@@ -1,30 +1,56 @@
 export default function NewsLetter() {
   return (
-    <>
-      <style>{`
-                @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-            
-                * {
-                    font-family: 'Poppins', sans-serif;
-                }
-            `}</style>
+    <section className="w-full bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 py-16 sm:py-20 md:py-24 px-4">
+      
+      <div className="max-w-4xl mx-auto text-center text-white">
 
-      <div className="w-full bg-slate-900 px-2 text-center text-white py-20 flex flex-col items-center justify-center">
-        <p className="text-indigo-500 font-medium">Get updated</p>
-        <h1 className="max-w-lg font-semibold text-4xl/[44px] mt-2">
-          Subscribe to our newsletter & get the latest news
+        {/* Small tag */}
+        <p className="text-orange-400 font-semibold tracking-wide text-sm sm:text-base">
+          Stay Updated
+        </p>
+
+        {/* Heading */}
+        <h1 className="text-2xl sm:text-4xl md:text-5xl font-extrabold mt-4 leading-tight">
+          Subscribe to our newsletter
         </h1>
-        <div className="flex items-center justify-center mt-10 border border-slate-600 focus-within:outline focus-within:outline-indigo-600 text-sm rounded-full h-14 max-w-md w-full">
-          <input
-            type="text"
-            className="bg-transparent outline-none rounded-full px-4 h-full flex-1"
-            placeholder="Enter your email address"
-          />
-          <button className="bg-indigo-600 text-white rounded-full h-11 mr-1 px-8 flex items-center justify-center">
-            Subscribe now
-          </button>
+
+        {/* Sub text */}
+        <p className="text-gray-300 mt-4 max-w-xl sm:max-w-2xl mx-auto text-sm sm:text-base">
+          Get the latest offers, food updates, and special discounts directly
+          in your inbox.
+        </p>
+
+        {/* Input box */}
+        <div className="mt-8 sm:mt-10 w-full max-w-xl mx-auto">
+          
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center 
+                          bg-white/10 backdrop-blur-md 
+                          rounded-2xl sm:rounded-full 
+                          p-2 gap-3">
+
+            <input
+              type="email"
+              placeholder="Enter your email address"
+              className="w-full flex-1 bg-transparent 
+                         px-4 sm:px-6 py-3 
+                         outline-none text-white 
+                         placeholder-gray-300"
+            />
+
+            <button className="w-full sm:w-auto 
+                               bg-orange-500 hover:bg-orange-600 
+                               text-white font-semibold 
+                               px-6 sm:px-8 py-3 
+                               rounded-xl sm:rounded-full 
+                               transition-all duration-300 
+                               hover:scale-105">
+              Subscribe
+            </button>
+
+          </div>
         </div>
+
       </div>
-    </>
+    </section>
   );
 }

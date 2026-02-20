@@ -1,210 +1,76 @@
+import { Facebook, Instagram, Twitter, Mail } from "lucide-react";
+import { Link } from "react-router-dom";
+
 export default function Footer() {
   return (
-    <div className="py-16">
-      <footer className=" flex flex-wrap justify-center lg:justify-between overflow-hidden gap-10 md:gap-20 py-16 px-6 md:px-16 lg:px-24 xl:px-32 text-[13px] text-gray-500 bg-black">
-        <div className="flex flex-wrap items-start gap-10 md:gap-[60px] xl:gap-[140px]">
-          <a href="https://prebuiltui.com">
-            <svg
-              width="31"
-              height="34"
-              viewBox="0 0 31 34"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="m8.75 5.3 6.75 3.884 6.75-3.885M8.75 28.58v-7.755L2 16.939m27 0-6.75 3.885v7.754M2.405 9.408 15.5 16.954l13.095-7.546M15.5 32V16.939M29 22.915V10.962a2.98 2.98 0 0 0-1.5-2.585L17 2.4a3.01 3.01 0 0 0-3 0L3.5 8.377A3 3 0 0 0 2 10.962v11.953A2.98 2.98 0 0 0 3.5 25.5L14 31.477a3.01 3.01 0 0 0 3 0L27.5 25.5a3 3 0 0 0 1.5-2.585"
-                stroke="url(#a)"
-                strokeWidth="2.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <defs>
-                <linearGradient
-                  id="a"
-                  x1="15.5"
-                  y1="2"
-                  x2="15.5"
-                  y2="32"
-                  gradientUnits="userSpaceOnUse"
-                >
-                  <stop stop-color="#F8FAFC" />
-                  <stop offset="1" stop-color="#383838" />
-                </linearGradient>
-              </defs>
-            </svg>
-          </a>
-          <div>
-            <p className="text-slate-100 font-semibold">Product</p>
-            <ul className="mt-2 space-y-2">
-              <li>
-                <a href="/" className="hover:text-indigo-600 transition">
-                  Home
-                </a>
-              </li>
-              <li>
-                <a href="/" className="hover:text-indigo-600 transition">
-                  Support
-                </a>
-              </li>
-              <li>
-                <a href="/" className="hover:text-indigo-600 transition">
-                  Pricing
-                </a>
-              </li>
-              <li>
-                <a href="/" className="hover:text-indigo-600 transition">
-                  Affiliate
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <p className="text-slate-100 font-semibold">Resources</p>
-            <ul className="mt-2 space-y-2">
-              <li>
-                <a href="/" className="hover:text-indigo-600 transition">
-                  Company
-                </a>
-              </li>
-              <li>
-                <a href="/" className="hover:text-indigo-600 transition">
-                  Blogs
-                </a>
-              </li>
-              <li>
-                <a href="/" className="hover:text-indigo-600 transition">
-                  Community
-                </a>
-              </li>
-              <li>
-                <a href="/" className="hover:text-indigo-600 transition">
-                  Careers
-                  <span className="text-xs text-white bg-indigo-600 rounded-md ml-2 px-2 py-1">
-                    We’re hiring!
-                  </span>
-                </a>
-              </li>
-              <li>
-                <a href="/" className="hover:text-indigo-600 transition">
-                  About
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <p className="text-slate-100 font-semibold">Legal</p>
-            <ul className="mt-2 space-y-2">
-              <li>
-                <a href="/" className="hover:text-indigo-600 transition">
-                  Privacy
-                </a>
-              </li>
-              <li>
-                <a href="/" className="hover:text-indigo-600 transition">
-                  Terms
-                </a>
-              </li>
-            </ul>
+    <footer className="bg-gradient-to-r from-orange-600 to-red-500 text-white pt-16 pb-8">
+
+      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12">
+
+        {/* Brand Section */}
+        <div className="text-center md:text-left">
+          <h2 className="text-3xl font-extrabold mb-4">Foodie 🍽️</h2>
+          <p className="text-orange-100 leading-relaxed">
+            Serving happiness on every plate. Fresh ingredients,
+            delicious flavors, and unforgettable taste.
+          </p>
+
+          {/* Social Icons */}
+          <div className="flex justify-center md:justify-start gap-4 mt-6">
+            <Facebook className="hover:scale-110 transition cursor-pointer" />
+            <Instagram className="hover:scale-110 transition cursor-pointer" />
+            <Twitter className="hover:scale-110 transition cursor-pointer" />
           </div>
         </div>
-        <div className="flex flex-col max-md:items-center max-md:text-center gap-2 items-end">
-          <p className="max-w-60">
-            Making every customer feel valued—no matter the size of your
-            audience.
-          </p>
-          <div className="flex items-center gap-4 mt-3">
-            <a
-              href="https://dribbble.com/prebuiltui"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="lucide lucide-dribbble size-5 hover:text-indigo-500"
-                aria-hidden="true"
-              >
-                <circle cx="12" cy="12" r="10"></circle>
-                <path d="M19.13 5.09C15.22 9.14 10 10.44 2.25 10.94"></path>
-                <path d="M21.75 12.84c-6.62-1.41-12.14 1-16.38 6.32"></path>
-                <path d="M8.56 2.75c4.37 6 6 9.42 8 17.72"></path>
-              </svg>
-            </a>
-            <a
-              href="https://www.linkedin.com/company/prebuiltui"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="lucide lucide-linkedin size-5 hover:text-indigo-500"
-                aria-hidden="true"
-              >
-                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                <rect width="4" height="12" x="2" y="9"></rect>
-                <circle cx="4" cy="4" r="2"></circle>
-              </svg>
-            </a>
-            <a href="https://x.com/prebuiltui" target="_blank" rel="noreferrer">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="lucide lucide-twitter size-5 hover:text-indigo-500"
-                aria-hidden="true"
-              >
-                <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
-              </svg>
-            </a>
-            <a
-              href="https://www.youtube.com/@prebuiltui"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="lucide lucide-youtube size-6 hover:text-indigo-500"
-                aria-hidden="true"
-              >
-                <path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"></path>
-                <path d="m10 15 5-3-5-3z"></path>
-              </svg>
-            </a>
-          </div>
-          <p className="mt-3 text-center">
-            © 2025 <a href="https://prebuiltui.com">PrebuiltUI</a>
-          </p>
+
+        {/* Quick Links */}
+        <div className="text-center sm:text-left">
+          <h3 className="text-xl font-semibold mb-4">Quick Links</h3>
+          <ul className="space-y-3 text-orange-100">
+            <li><Link to="/" className="hover:text-white transition">Home</Link></li>
+            <li><Link to="/menu" className="hover:text-white transition">Menu</Link></li>
+            <li><Link to="/book-table" className="hover:text-white transition">Book Table</Link></li>
+            <li><Link to="/contact" className="hover:text-white transition">Contact</Link></li>
+          </ul>
         </div>
-      </footer>
-    </div>
+
+        {/* Support */}
+        <div className="text-center sm:text-left">
+          <h3 className="text-xl font-semibold mb-4">Support</h3>
+          <ul className="space-y-3 text-orange-100">
+            <li><Link to="/" className="hover:text-white transition">FAQs</Link></li>
+            <li><Link to="/" className="hover:text-white transition">Privacy Policy</Link></li>
+            <li><Link to="/" className="hover:text-white transition">Terms & Conditions</Link></li>
+          </ul>
+        </div>
+
+        {/* Newsletter */}
+        <div className="text-center sm:text-left">
+          <h3 className="text-xl font-semibold mb-4">Subscribe</h3>
+          <p className="text-orange-100 mb-4">
+            Get updates about new dishes & offers.
+          </p>
+
+         <div className="flex flex-col sm:flex-row gap-2 items-center sm:items-stretch max-w-md mx-auto">
+  <input
+    type="email"
+    placeholder="Enter your email"
+    className="flex-1 px-4 py-2 sm:py-2 text-gray-700 outline-none border border-white/30 rounded-full sm:rounded-l-full sm:rounded-r-none bg-white/10 placeholder-gray-200"
+  />
+  <button className="px-4 sm:px-6 py-2 bg-black text-white rounded-full sm:rounded-r-full sm:rounded-l-none flex items-center justify-center hover:bg-gray-800 transition">
+    <Mail size={18} />
+  </button>
+</div>
+
+        </div>
+
+      </div>
+
+      {/* Bottom Section */}
+      <div className="border-t border-orange-400 mt-12 pt-6 text-center text-orange-100 text-sm">
+        © 2026 Foodie. All Rights Reserved.
+      </div>
+
+    </footer>
   );
 }

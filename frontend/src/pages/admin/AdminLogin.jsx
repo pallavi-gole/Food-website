@@ -26,6 +26,7 @@ const AdminLogin = () => {
 
       if (data.success) {
         localStorage.setItem("admin", JSON.stringify(data.admin));
+        localStorage.setItem("adminToken", data.token);
         setAdmin(true);
         toast.success(data.message);
         navigate("/admin");

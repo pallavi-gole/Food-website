@@ -7,7 +7,13 @@ const Categories = () => {
 
   const deleteCategory = async (id) => {
     try {
-      const { data } = await axios.delete(`/api/category/delete/${id}`);
+      const { data } = await axios.delete(`/api/category/delete/${id}`,
+        {
+          headers:{
+             Authorization: `Bearer ${localStorage.getItem("adminToken")}`,
+          },
+        }
+      );
       if (data.success) {
         toast.success(data.message);
         fetchCategories();

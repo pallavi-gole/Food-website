@@ -6,8 +6,8 @@ const generateToken = (res, payload) => {
   const token = jwt.sign(payload, process.env.JWT_SECRET, { expiresIn: "1d" });
   res.cookie("token", token, {
     httpOnly: true,
-    secure: process.env.NODE_ENV === "production",
-    sameSite: "none",
+    secure: false,
+    sameSite: "lax",
     maxAge: 24 * 60 * 60 * 1000,
   });
   return token;
@@ -55,15 +55,26 @@ export const loginUser = async (req, res) => {
       return res.json({ message: "Invalid credentials", success: false });
     }
 
-    generateToken(res, { id: user._id, role: user.isAdmin ? "admin" : "user" });
-    res.json({
-      message: "User logged in successfully",
-      success: true,
-      user: {
-        name: user.name,
-        email: user.email,
-      },
-    });
+    // generateToken(res, { id: user._id, role: user.isAdmin ? "admin" : "user" });
+const token = generateToken(res, {
+  id: user._id,
+  role: user.isAdmin ? "admin" : "user",
+});
+
+res.json({
+  success: true,
+  message: "User logged in successfully",
+  token: token,   // ⭐ THIS LINE IS IMPORTANT
+  user: {
+  _id: user._id,
+  name: user.name,
+  email: user.email,
+  role: user.isAdmin ? "admin" : "user",
+},
+
+});
+
+
   } catch (error) {
     console.log(error.message);
     return res.json({ message: "Internal server error", success: false });
@@ -86,20 +97,24 @@ export const adminLogin = async (req, res) => {
       return res.json({ message: "Invalid credentials", success: false });
     }
 
-    const token = jwt.sign({ email }, process.env.JWT_SECRET, {
-      expiresIn: "1d",
-    });
+    const token = jwt.sign(
+  { email, role: "admin" },  //  add role 
+  process.env.JWT_SECRET,
+  { expiresIn: "1d" }
+);
+
 
     res.cookie("token", token, {
       httpOnly: true,
-      secure: process.env.NODE_ENV === "production",
-      sameSite: "none",
+      secure: false,
+      sameSite: "lax",
       maxAge: 24 * 60 * 60 * 1000,
     });
 
     return res.json({
       success: true,
       message: "Admin logged in successfully",
+      token,
       admin: {
         admin: adminEmail,
       },
